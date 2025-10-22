@@ -1,0 +1,183 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AuthFormSkeleton > renders correctly for signin 1`] = `
+<div>
+  <div>
+    <div
+      class="h-[480px] w-[400px] border-[#ffffff22] bg-slate-950 border-2 pt-8 rounded-[0.75rem] justify-center items-center"
+    >
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[24px] w-[160px] rounded"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[250px] mt-2 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] rounded mt-6"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[10px] w-[320px] mt-8 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="items-center justify-center mt-8 ml-[40px]"
+      >
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[61px] rounded"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] mt-2 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] rounded mt-6"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[250px] rounded mt-13"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center mt-6"
+      >
+        <div
+          class="bg-accent animate-pulse h-[42px] w-[183px] rounded"
+          data-slot="skeleton"
+        />
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AuthFormSkeleton > renders correctly for signup 1`] = `
+<div>
+  <div>
+    <div
+      class="h-[640px] w-[400px] border-[#ffffff22] bg-slate-950 border-2 pt-8 rounded-[0.75rem] justify-center items-center"
+    >
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[24px] w-[160px] rounded"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[16px] w-[250px] mt-2 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] rounded mt-6"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[10px] w-[320px] mt-8 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-row items-center justify-center space-x-4 mt-9"
+      >
+        <section
+          class="items-center justify-center"
+        >
+          <div
+            class="bg-accent animate-pulse h-[18px] w-[61px] rounded"
+            data-slot="skeleton"
+          />
+          <div
+            class="bg-accent animate-pulse h-[30px] w-[152px] mt-2 rounded"
+            data-slot="skeleton"
+          />
+        </section>
+        <section
+          class="items-center justify-center"
+        >
+          <div
+            class="bg-accent animate-pulse h-[18px] w-[61px] rounded"
+            data-slot="skeleton"
+          />
+          <div
+            class="bg-accent animate-pulse h-[30px] w-[152px] mt-2 rounded"
+            data-slot="skeleton"
+          />
+        </section>
+      </section>
+      <section
+        class="items-center justify-center mt-4 ml-[40px]"
+      >
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[61px] rounded"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] mt-2 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="items-center justify-center mt-4 ml-[40px]"
+      >
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[61px] rounded"
+          data-slot="skeleton"
+        />
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] mt-2 rounded"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[30px] w-[320px] rounded mt-6"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-accent animate-pulse h-[18px] w-[250px] rounded mt-15"
+          data-slot="skeleton"
+        />
+      </section>
+      <section
+        class="flex flex-col items-center justify-center mt-6"
+      >
+        <div
+          class="bg-accent animate-pulse h-[42px] w-[183px] rounded"
+          data-slot="skeleton"
+        />
+      </section>
+    </div>
+  </div>
+</div>
+`;

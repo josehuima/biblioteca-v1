@@ -1,0 +1,35 @@
+-- Remove existing sample data
+TRUNCATE TABLE books RESTART IDENTITY CASCADE;
+
+-- Insert real books data
+INSERT INTO books (title, author, genre, isbn, total_copies, available_copies, cover) VALUES
+('To Kill a Mockingbird', 'Harper Lee', 'Classic Fiction', '9780446310499', 5, 5, 'mockingbird.jpg'),
+('1984', 'George Orwell', 'Dystopian Fiction', '9780451524935', 5, 5, '1984.jpg'),
+('Pride and Prejudice', 'Jane Austen', 'Classic Romance', '9780141439518', 5, 5, 'pride.jpg'),
+('The Great Gatsby', 'F. Scott Fitzgerald', 'Classic Fiction', '9780743273565', 5, 5, 'gatsby.jpg'),
+('One Hundred Years of Solitude', 'Gabriel García Márquez', 'Magical Realism', '9780060883287', 5, 5, 'solitude.jpg'),
+('The Catcher in the Rye', 'J.D. Salinger', 'Coming-of-age Fiction', '9780316769488', 5, 5, 'catcher.jpg'),
+('Lord of the Flies', 'William Golding', 'Psychological Fiction', '9780399501487', 5, 5, 'flies.jpg'),
+('Brave New World', 'Aldous Huxley', 'Dystopian Fiction', '9780060850524', 5, 5, 'brave.jpg'),
+('The Hobbit', 'J.R.R. Tolkien', 'Fantasy', '9780547928227', 5, 5, 'hobbit.jpg'),
+('Fahrenheit 451', 'Ray Bradbury', 'Dystopian Fiction', '9781451673319', 5, 5, 'fahrenheit.jpg'),
+('The Odyssey', 'Homer', 'Epic Poetry', '9780140268867', 5, 5, 'odyssey.jpg'),
+('Don Quixote', 'Miguel de Cervantes', 'Classic Fiction', '9780142437230', 5, 5, 'quixote.jpg'),
+('Jane Eyre', 'Charlotte Brontë', 'Gothic Fiction', '9780141441146', 5, 5, 'jane.jpg'),
+('The Divine Comedy', 'Dante Alighieri', 'Epic Poetry', '9780142437223', 5, 5, 'divine.jpg'),
+('Crime and Punishment', 'Fyodor Dostoevsky', 'Psychological Fiction', '9780140449136', 5, 5, 'crime.jpg'),
+('The Brothers Karamazov', 'Fyodor Dostoevsky', 'Philosophical Fiction', '9780374528379', 5, 5, 'brothers.jpg'),
+('War and Peace', 'Leo Tolstoy', 'Historical Fiction', '9781400079988', 5, 5, 'war.jpg'),
+('The Picture of Dorian Gray', 'Oscar Wilde', 'Gothic Fiction', '9780141439570', 5, 5, 'dorian.jpg'),
+('Wuthering Heights', 'Emily Brontë', 'Gothic Fiction', '9780141439556', 5, 5, 'wuthering.jpg'),
+('The Count of Monte Cristo', 'Alexandre Dumas', 'Adventure Fiction', '9780140449266', 5, 5, 'monte.jpg'),
+('Les Misérables', 'Victor Hugo', 'Historical Fiction', '9780140444308', 5, 5, 'miserables.jpg'),
+('The Grapes of Wrath', 'John Steinbeck', 'Historical Fiction', '9780143039433', 5, 5, 'grapes.jpg'),
+('The Old Man and the Sea', 'Ernest Hemingway', 'Literary Fiction', '9780684801223', 5, 5, 'oldman.jpg'),
+('Moby-Dick', 'Herman Melville', 'Adventure Fiction', '9780142437247', 5, 5, 'moby.jpg'),
+('The Canterbury Tales', 'Geoffrey Chaucer', 'Poetry', '9780140424386', 5, 5, 'canterbury.jpg'),
+('Paradise Lost', 'John Milton', 'Epic Poetry', '9780140424393', 5, 5, 'paradise.jpg'),
+('The Scarlet Letter', 'Nathaniel Hawthorne', 'Historical Fiction', '9780142437261', 5, 5, 'scarlet.jpg'),
+('Heart of Darkness', 'Joseph Conrad', 'Psychological Fiction', '9780141441672', 5, 5, 'heart.jpg'),
+('The Adventures of Huckleberry Finn', 'Mark Twain', 'Adventure Fiction', '9780142437179', 5, 5, 'huck.jpg'),
+('Anna Karenina', 'Leo Tolstoy', 'Tragic Romance', '9780143035008', 5, 5, 'anna.jpg'); 

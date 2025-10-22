@@ -1,0 +1,1 @@
+ALTER TABLE "transactions" ALTER COLUMN "borrowed_date" DROP NOT NULL;
