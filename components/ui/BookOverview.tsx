@@ -1,10 +1,14 @@
 "use client";
 
-import { IKImage, ImageKitProvider } from "imagekitio-next";
 import React from "react";
+import Image from "next/image";
+import { IKImage, ImageKitProvider } from "imagekitio-next";
 
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT!;
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY!;
+
+// Caminho da imagem padrão (deve estar em public/cover_2.jpeg)
+const defaultCover = "/cover_2.jpeg";
 
 const BookOverview = ({
   title,
@@ -15,7 +19,7 @@ const BookOverview = ({
   cover,
   isbn,
   onBorrow,
-  onReturn, // New prop for return functionality
+  onReturn,
   borrowed,
   requested,
   maxBorrowed,
@@ -27,10 +31,10 @@ const BookOverview = ({
   genre: string;
   totalCopies: number;
   availableCopies: number;
-  cover: string;
+  cover: string | null;
   isbn: string;
   onBorrow: () => void;
-  onReturn: () => void; // New prop for return functionality
+  onReturn: () => void;
   borrowed: boolean;
   requested: boolean;
   maxBorrowed: boolean;
@@ -46,13 +50,20 @@ const BookOverview = ({
     return "+ Leitura";
   };
 
-  const isDisabled = loading || transaction?.status === "RETURN" || (!borrowed && !requested && !maxBorrowed);
+  const isDisabled =
+    loading || transaction?.status === "RETURN" || (!borrowed && !requested && !maxBorrowed);
+
+  // ✅ Define a imagem de fallback caso não tenha capa
+  const displayCover =
+    cover && cover.trim() !== "" && cover !== "null" ? cover : defaultCover;
 
   return (
     <section className="flex flex-col-reverse text-green-600 items-center justify-around gap-12 sm:gap-32 xl:flex-row xl:gap-8 mx-10 my-10 w-full max-w-7xl">
       {/* Left side: Book Info */}
       <div className="flex flex-col gap-5 max-w-[600px] min-w-[300px] w-full">
-        <h1 className="text-5xl font-semibold text-black dark:text-white md:text-7xl">{title}</h1>
+        <h1 className="text-5xl font-semibold text-black dark:text-white md:text-7xl">
+          {title}
+        </h1>
 
         <p className="text-xl text-light-100">
           Autor <span className="font-semibold text-[#EED1AC]">{author}</span>
@@ -68,17 +79,16 @@ const BookOverview = ({
           </p>
 
           <div className="flex flex-row text-green-600 flex-wrap gap-4 mt-2">
-            <p className="text-xl  text-light-100">
+            <p className="text-xl text-light-100">
               Total: <span className="font-semibold text-[#EED1AC]">{totalCopies}</span>
             </p>
 
             <p className="text-xl text-light-100">
-              Disponiveis: <span className="font-semibold text-[#EED1AC]">{availableCopies}</span>
+              Disponíveis: <span className="font-semibold text-[#EED1AC]">{availableCopies}</span>
             </p>
           </div>
         </div>
 
-        {/* Borrow/Return Button */}
         <button
           onClick={transaction?.status === "RETURN" ? undefined : borrowed ? onReturn : onBorrow}
           disabled={isDisabled}
@@ -90,9 +100,27 @@ const BookOverview = ({
 
       {/* Right side: Book Cover */}
       <div className="relative flex justify-center max-w-[400px] w-full">
-        <ImageKitProvider publicKey={publicKey} urlEndpoint={urlEndpoint}>
-          <IKImage path={cover} alt="Book" width={300} height={400} />
-        </ImageKitProvider>
+        {displayCover.startsWith("/") ? (
+          // ✅ Se for imagem local
+          <Image
+            src={displayCover}
+            alt="Book cover"
+            width={300}
+            height={400}
+            className="rounded-lg shadow-lg object-cover"
+          />
+        ) : (
+          // ✅ Se for imagem do ImageKit
+          <ImageKitProvider publicKey={publicKey} urlEndpoint={urlEndpoint}>
+            <IKImage
+              path={displayCover}
+              alt="Book cover"
+              width={300}
+              height={400}
+              className="rounded-lg shadow-lg object-cover"
+            />
+          </ImageKitProvider>
+        )}
       </div>
     </section>
   );

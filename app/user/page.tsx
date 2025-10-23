@@ -81,7 +81,7 @@ export default async function UserDashboard() {
           </div>
           <div>
             <p className="text-gray-600">Total pendentes</p>
-            <p className="text-lg font-medium text-red-600">${fines}</p>
+            <p className="text-lg font-medium text-red-600">{fines} Kzs</p>
           </div>
         </div>
       </div>

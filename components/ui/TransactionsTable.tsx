@@ -166,12 +166,6 @@ export default function TransactionsTable({ initialTransactions, totalPages, tot
                 <td className="px-4 py-2">{tx.borrowedDate}</td>
                 <td className="px-4 py-2">{tx.returnedDate}</td>
                 <td className="px-4 py-2 flex gap-2">
-                  {/* Show Accept button only if status is not accepted or rejected */}
-                  {tx.status !== "accepted" && tx.status !== "rejected" && (
-                    <Button size="sm" onClick={() => handleAccept(tx.tid)} className="bg-green-500 hover:bg-green-600 text-white" disabled={loadingTransaction === tx.tid}>
-                      {loadingTransaction === tx.tid ? "Processando..." : "Aceitar"}
-                    </Button>
-                  )}
 
                   {/* Show Reject button only if status is not accepted or rejected */}
                   {tx.status !== "accepted" && tx.status !== "rejected" && (

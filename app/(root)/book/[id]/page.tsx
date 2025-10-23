@@ -1,27 +1,51 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+
 import BookOverview from "@/components/ui/BookOverview";
 import { handleBorrowBook, fetchBookDetails, checkUserBookStatus, fetchAcceptedTransaction, handleReturnBook } from "./server";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+
+import { useParams, useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { BookOverviewSkeleton } from "@/components/ui/BookOverviewSkeleton";
-import  PdfViewer  from "@/components/ui/PdfViewer"
 
-export default function Page({ params }: any) {
-  const { id }: any = use(params);
-  const bookId = Number(id);
+interface BookDetails {
+  title: string;
+  author: string;
+  genre: string;
+  totalCopies: number;
+  availableCopies: number;
+  cover?: string | null;
+  isbn: string;
+}
+
+interface Transaction {
+  tid: string;
+  status: "ACCEPTED" | "RETURN" | "PENDING";
+  userId: string;
+  bookId: string;
+  createdAt?: string;
+}
+
+
+export default function Page() {
+  const params = useParams();
+  const bookId = params?.id as string;
   const router = useRouter();
   const { user, isLoaded } = useUser();
+
+
+
+
+  
 
   const [borrowed, setBorrowed] = useState(false);
   const [requested, setRequested] = useState(false);
   const [maxBorrowed, setMaxBorrowed] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [bookDetails, setBookDetails] = useState<any>(null);
-  const [transaction, setTransaction] = useState<any>(null); // New state for transaction
+ const [bookDetails, setBookDetails] = useState<BookDetails | null>(null);
+const [transaction, setTransaction] = useState<Transaction | null>(null);
+
 
   useEffect(() => {
     if (isLoaded && !user) {
@@ -40,6 +64,8 @@ export default function Page({ params }: any) {
     };
     loadBook();
   }, [bookId, router]);
+
+  
 
   useEffect(() => {
     const checkStatus = async () => {
@@ -91,6 +117,8 @@ export default function Page({ params }: any) {
       console.error(result.message);
     }
   };
+
+  console.log('dados recebidos: ', bookDetails)
 
   if (!bookDetails) {
     return (

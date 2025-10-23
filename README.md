@@ -17,6 +17,3 @@ The .env file in the root of the project will look like : <br>
 
 
 <b>More Updates in future :)</b>
-
-
-

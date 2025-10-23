@@ -297,6 +297,9 @@ export async function rentBook(bookId: number, userId: string) {
       .where(and(eq(physicalBooks.bookId, bookId), eq(physicalBooks.borrowed, false)))
       .limit(1);
 
+
+      console.log("numero de livros encontrados: ", availableBooks)
+
     // Verificar se existem livros disponíveis
 
     if (availableBooks.length === 0) {

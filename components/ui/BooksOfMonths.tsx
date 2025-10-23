@@ -41,11 +41,11 @@ export default function RecentBooks() {
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
                 {recentBooks.map((book) => (
-                    <Link key={book.id} href={`/books/${book.id}`}>
+                    <Link key={book.id} href={`/book/${book.id}`}>
                         <Card className="cursor-pointer hover:shadow-lg transition flex flex-col h-[320px]">
                             <div className="relative w-full h-48">
                                 <Image
-                                    src={book.cover || "/placeholder.jpg"}
+                                    src={book.cover || "/cover_2.jpeg"}
                                     alt={book.title}
                                     fill
                                     className="object-cover rounded-t-lg"

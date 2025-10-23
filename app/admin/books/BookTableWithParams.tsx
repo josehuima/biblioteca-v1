@@ -141,13 +141,7 @@ export function BookTableWithParams() {
                                     </TableCell>
                                     <TableCell>{book.totalCopies}</TableCell>
                                     <TableCell>
-                                        <Button
-                                            variant="outline"
-                                            size="sm"
-                                            onClick={() => router.push(`/admin/books/${book.id}`)}
-                                        >
-                                            Editar
-                                        </Button>
+                                        
                                     </TableCell>
                                 </TableRow>
                             ))}
